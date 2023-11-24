@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    //- 여기에 header 추가
+    include fragment/header.pug    
+    block content
+    //- 여기에 footer 추가
+    include fragment/footer.pug    
