@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+  div.container-lg
+    h1 #{board.title}
+    table.table(border=1)
+        tr 
+          th(width="200") No
+          td #{board.board_no}
+        tr
+          th(width="200") Writer
+          td #{board.writer}
+        tr
+          th(width="200") Content
+          td #{board.content}
+
+    div.btn-box
+      a.btn(href="/board") 목록
+      a.btn(href=`/board/update/${board.board_no}`) 수정
+      form(action="/board/delete" method="post")
+        input(type="hidden", name="id" value=`${board.board_no}`)
+        button.btn(type="submit") 삭제
